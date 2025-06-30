@@ -64,7 +64,7 @@ function Home() {
                     I am going to explain what you can expect on each tab:
                     <br /><br />
                     <b>The Home tab:</b> <br />
-                    This is the home tab. This tab will contain a short description of every other tab.
+                    This is the home tab. This tab will contain a short description of every other tab, including this tab.
                     <br /><br />
                     <b>The Projects tab:</b><br />
                     This tab will contain links to some of my project repos on my github account so that you can check them
