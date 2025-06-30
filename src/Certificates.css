@@ -1,0 +1,48 @@
+header {
+    z-index: 1;
+}
+
+.cards {
+    width: 90%;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.img-container img {
+    width: 95%;
+    border-radius: 10px;
+}
+
+.img-container {
+    overflow: hidden;
+    margin: 0 auto;
+    transition: 0.5s ease;
+}
+
+.cards a {
+    width: 48%;
+    margin: 10px;
+    font-size: 2em;
+    color: rgb(43, 35, 24);
+    text-decoration: none;
+    display: block;
+    background-color: #e2c16700;
+    border: 2px solid rgb(192, 175, 82);
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.2s ease;
+    padding-top: 10px;
+
+    &:hover {
+        background-color: rgb(219, 180, 107);
+    }
+}
+
+@media screen and (max-width:700px) {
+    .cards a {
+        width: 95%;
+    }
+}

@@ -1,0 +1,62 @@
+.main {
+    margin: 20px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    justify-content: space-evenly;
+
+    aside {
+        align-self: flex-end;
+    }
+
+    article {
+        height: fit-content;
+    }
+}
+
+aside,
+section,
+article {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid saddlebrown;
+    border-radius: 10px;
+
+
+    #toComments:hover {
+        cursor: pointer;
+    }
+}
+
+#art {
+    img {
+        border-radius: 100%;
+        width: 100%;
+        aspect-ratio: 1/1;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width:1220px) {
+    .main {
+        grid-template-columns: 95%;
+    }
+
+    aside,
+    section,
+    article {
+        margin: 10px 0;
+    }
+
+    aside {
+        order: 2;
+    }
+
+    section {
+        order: 1;
+    }
+
+    article {
+        order: 0;
+    }
+}

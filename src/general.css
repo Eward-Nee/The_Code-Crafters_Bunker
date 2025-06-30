@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(252, 249, 229);
+    color: rgb(61, 40, 0);
+}
+
+.ml20 {
+    padding-left: 20px;
+}
+
+.decLess {
+    list-style: none;
+}
+
+.inUP {
+    cursor: default !important;
+    color: gray;
+}
+
+.nav {
+    display: block;
+    font-size: 3em;
+    text-align: center;
+    padding-left: 0;
+    background: linear-gradient(rgb(238, 233, 188), rgb(252, 249, 229));
+
+    li {
+        cursor: pointer;
+    }
+
+}
+
+.footer {
+    background: linear-gradient(rgb(252, 249, 229), rgb(238, 233, 188));
+}
+
+.link {
+    color: rgb(61, 0, 0);
+    text-decoration: none;
+
+    &:hover {
+        color: rgb(0, 71, 119);
+        cursor: pointer !important;
+    }
+}
+
+.clear:hover {
+    color: rgb(26, 83, 50);
+}
+
+#gitLink {
+    text-decoration: none;
+    color: rgb(60, 100, 0);
+
+    &:hover {
+        color: rgb(56, 150, 1);
+    }
+}
+
+@media screen and (min-width:1220px) {
+    .nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 20px;
+
+        li {
+            margin-right: 20px;
+            cursor: pointer;
+
+            &:not(#nav3)::after {
+                content: " " url("./arrow.svg");
+            }
+        }
+    }
+}

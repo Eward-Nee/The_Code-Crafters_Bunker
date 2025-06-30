@@ -1,0 +1,70 @@
+#funProjects,
+#learningProjects,
+#workProjects {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid saddlebrown;
+    border-radius: 10px;
+}
+
+.projectsContainer {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    justify-content: space-evenly;
+}
+
+#projects {
+    li {
+        border: 2px solid rgb(165, 122, 42);
+        border-radius: 20px;
+        width: 20%;
+        min-width: 100px;
+        aspect-ratio: 3/1;
+        text-align: center;
+        padding: 50px 0;
+        font-size: 1.8em;
+        margin: 5px;
+
+        &:hover {
+            transition: 0.2s;
+            cursor: pointer;
+            background-color: rgb(219, 180, 107);
+
+            & a {
+                color: rgb(0, 71, 119);
+            }
+        }
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+@media screen and (max-width:1220px) {
+    .projectsContainer {
+        display: grid;
+        grid-template-columns: 95%;
+        justify-content: space-evenly;
+    }
+
+    #funProjects,
+    #learningProjects,
+    #workProjects {
+        margin: 20px 0;
+    }
+
+    #projects {
+        li {
+            width: 95%;
+            padding: 80px 0;
+        }
+
+        display: block;
+        overflow: hidden;
+
+    }
+}
