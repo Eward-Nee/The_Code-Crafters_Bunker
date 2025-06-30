@@ -64,10 +64,7 @@ function Home() {
                     I am going to explain what you can expect on each tab:
                     <br /><br />
                     <b>The Home tab:</b> <br />
-                    This is the home tab. When the home tab is clicked when you are on the home page already,
-                    it will cause the opening animation to play. If you are not on the home page and you clickedon the home
-                    tab,
-                    will take you to the home page without playing the opening animation.
+                    This is the home tab. This tab will contain a short description of every other tab.
                     <br /><br />
                     <b>The Projects tab:</b><br />
                     This tab will contain links to some of my project repos on my github account so that you can check them
