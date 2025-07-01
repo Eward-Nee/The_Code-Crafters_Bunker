@@ -1,3 +1,29 @@
+:root {
+    --bgLight: hsl(45, 100%, 97%);
+    --bgEdgeLight: hsl(46, 100%, 88%);
+
+    --textLight: hsl(45, 100%, 10%);
+    --textHoverLight: hsl(209, 38%, 44%);
+    --textDisabled: hsl(0, 0%, 44%);
+
+    --bgMain: hsl(0, 0%, 100%);
+    --bgHoverMain: hsl(45, 100%, 93%);
+    --bgBorder: hsl(46, 100%, 83%);
+}
+
+:root[dataTheme="dark"] {
+    --bgLight: hsl(45, 100%, 3%);
+    --bgEdgeLight: hsl(45, 100%, 8%);
+
+    --textLight: hsl(45, 100%, 90%);
+    --textHoverLight: hsl(209, 38%, 66%);
+    --textDisabled: hsl(0, 0%, 66%);
+
+    --bgMain: hsl(0, 0%, 0%);
+    --bgHoverMain: hsl(45, 100%, 7%);
+    --bgBorder: hsl(46, 100%, 17%);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,11 +31,11 @@
 }
 
 body {
-    background-color: rgb(238, 233, 188);
-    color: rgb(61, 40, 0);
+    background-color: var(--bgEdgeLight);
+    color: var(--textLight);
 
     .midPage {
-        background-color: rgb(252, 249, 229);
+        background-color: var(--bgLight);
     }
 }
 
@@ -23,7 +49,7 @@ body {
 
 .inUP {
     cursor: default !important;
-    color: gray;
+    color: var(--textDisabled);
 }
 
 .nav {
@@ -31,7 +57,7 @@ body {
     font-size: 3em;
     text-align: center;
     padding-left: 0;
-    background: linear-gradient(rgb(238, 233, 188), rgb(252, 249, 229));
+    background: linear-gradient(var(--bgEdgeLight), var(--bgLight));
 
     li {
         cursor: pointer;
@@ -40,29 +66,29 @@ body {
 }
 
 .footer {
-    background: linear-gradient(rgb(252, 249, 229), rgb(238, 233, 188));
+    background: linear-gradient(var(--bgLight), var(--bgEdgeLight));
 }
 
 .link {
-    color: rgb(61, 0, 0);
+    color: var(--textLight);
     text-decoration: none;
 
     &:hover {
-        color: rgb(0, 71, 119);
+        color: var(--textHoverLight);
         cursor: pointer !important;
     }
 }
 
 .clear:hover {
-    color: rgb(26, 83, 50);
+    color: var(--textHoverLight);
 }
 
 #gitLink {
     text-decoration: none;
-    color: rgb(60, 100, 0);
+    color: var(--textLight);
 
     &:hover {
-        color: rgb(56, 150, 1);
+        color: var(--textHoverLight);
     }
 }
 

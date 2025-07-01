@@ -1,28 +1,38 @@
 import { useSelector, useDispatch } from "react-redux"
 import "./general.css"
 import { actionPage } from "./reducers"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 function Header() {
     const dispatch = useDispatch()
     const pageIndex = useSelector((state) => state.page.pageIndex)
+    const [theme, setTheme] = useState("light")
+
+    function handleNavClick(event) {
+        if (event.target.classList[1] === "navItem") {
+            dispatch(actionPage.switchPage(String(event.target.id).slice(-1)))
+        }
+    }
+
+    function handleThemeChange(event) {
+        if (event.target.attributes.themechange) {
+            setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"))
+        }
+    }
 
     useEffect(() => {
-        addEventListener("click", (event) => {
-            if (event.target.classList[1] == "navItem") {
-                dispatch(actionPage.switchPage(String(event.target.id).slice(-1)))
-            }
-        })
+        const root = document.documentElement
+        root.setAttribute("dataTheme", theme)
+
+        document.addEventListener("click", handleNavClick)
+        document.addEventListener("click", handleThemeChange)
 
         return () => {
-            removeEventListener("click", (event) => {
-                if (event.target.classList[1] == "navItem") {
-                    dispatch(actionPage.switchPage(String(event.target.id).slice(-1)))
-                }
-            })
-        }
-    }, [])
-
+            document.removeEventListener("click", handleNavClick)
+            document.removeEventListener("click", handleThemeChange)
+            root.removeAttribute("dataTheme")
+        };
+    }, [theme])
 
     return (
         <>
@@ -34,6 +44,9 @@ function Header() {
                     <li id="nav3" className={pageIndex == 3 ? "inUP navItem" : "clear navItem"}>Comments</li>
                 </ul>
             </nav>
+            <div style={{ position: "absolute", cursor: "pointer", top: "0", right: "20px", fontSize: "2em" }} themechange="true">
+                {theme == "light" ? "☀️" : "🌘"}
+            </div>
         </>
     )
 }

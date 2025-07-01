@@ -1,3 +1,29 @@
+:root {
+    --bgLight: hsl(45, 100%, 97%);
+    --bgEdgeLight: hsl(46, 100%, 88%);
+
+    --textLight: hsl(45, 100%, 10%);
+    --textHoverLight: hsl(209, 38%, 44%);
+    --textDisabled: hsl(0, 0%, 44%);
+
+    --bgMain: hsl(0, 0%, 100%);
+    --bgHoverMain: hsl(45, 100%, 93%);
+    --bgBorder: hsl(46, 100%, 83%);
+}
+
+:root[dataTheme="dark"] {
+    --bgLight: hsl(45, 100%, 3%);
+    --bgEdgeLight: hsl(45, 100%, 8%);
+
+    --textLight: hsl(45, 100%, 90%);
+    --textHoverLight: hsl(209, 38%, 66%);
+    --textDisabled: hsl(0, 0%, 66%);
+
+    --bgMain: hsl(0, 0%, 0%);
+    --bgHoverMain: hsl(45, 100%, 7%);
+    --bgBorder: hsl(46, 100%, 17%);
+}
+
 header {
     z-index: 1;
 }
@@ -26,18 +52,18 @@ header {
     width: 48%;
     margin: 10px;
     font-size: 2em;
-    color: rgb(43, 35, 24);
+    color: var(--textLight);
     text-decoration: none;
     display: block;
-    background-color: #e2c16700;
-    border: 2px solid rgb(192, 175, 82);
+    background-color: var(--bgMain);
+    border: 2px solid var(--bgBorder);
     border-radius: 20px;
     text-align: center;
     transition: 0.2s ease;
     padding-top: 10px;
 
     &:hover {
-        background-color: rgb(219, 180, 107);
+        background-color: var(--bgHoverMain);
     }
 }
 
