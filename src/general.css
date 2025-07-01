@@ -24,6 +24,17 @@
     --bgBorder: hsl(46, 100%, 17%);
 }
 
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+
+    .footer {
+        margin-top: auto;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,7 +42,7 @@
 }
 
 body {
-    background-color: var(--bgEdgeLight);
+    background-color: var(--bgLight);
     color: var(--textLight);
 
     .midPage {
