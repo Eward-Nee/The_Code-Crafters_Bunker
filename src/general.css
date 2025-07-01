@@ -5,8 +5,12 @@
 }
 
 body {
-    background-color: rgb(252, 249, 229);
+    background-color: rgb(238, 233, 188);
     color: rgb(61, 40, 0);
+
+    .midPage {
+        background-color: rgb(252, 249, 229);
+    }
 }
 
 .ml20 {

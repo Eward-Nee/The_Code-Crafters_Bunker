@@ -16,7 +16,7 @@ function App() {
 
     if (pageIndex == 0) {
       setPageCode(<Home />)
-    } else if (pageIndex == 1) {``
+    } else if (pageIndex == 1) {
       setPageCode(<Projects />)
     } else if (pageIndex == 2) {
       setPageCode(<Certificates />)
@@ -32,7 +32,11 @@ function App() {
   return (
     <div className="page">
       <Header />
-      {pageCode}
+      <div className="midPage">
+        <br />
+        {pageCode}
+        <br />
+      </div>
       <Footer />
     </div>
   )
