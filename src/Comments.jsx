@@ -61,7 +61,7 @@ function Comments() {
                 <ul>
                     {comments.map(comment => (
                         <li key={comment.id}>
-                            <strong>{comment.nickName}:</strong>
+                            <strong>{comment.nickName}: </strong>
                             {comment.comment.split('\n').map((line, index) => (
                                 <span key={index}>
                                     {line}
