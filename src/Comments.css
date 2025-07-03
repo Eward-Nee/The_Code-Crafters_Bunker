@@ -1,0 +1,106 @@
+.commentPage {
+    padding: 20px;
+}
+
+.commentForm {
+    .nameInput {
+        width: 250px;
+        padding: 4px;
+    }
+
+    .commentInput {
+        max-width: 60%;
+        max-height: 400px;
+        width: 60%;
+        padding: 4px;
+    }
+
+    &>* {
+        margin-top: 4px;
+        border: 2px solid var(--bgBorder);
+        border-radius: 8px;
+
+        background-color: var(--bgMain);
+        color: var(--textLight);
+
+        &:hover {
+            color: var(--textHoverLight);
+        }
+    }
+
+    .commentFormSubmitButton {
+        padding: 8px;
+
+        &:hover {
+            background-color: var(--bgHoverMain);
+            color: var(--textHoverLight);
+        }
+    }
+}
+
+.commentsContainer {
+    max-height: 600px;
+    width: 90%;
+    overflow-y: scroll;
+    overflow-wrap: normal;
+    padding: 8px;
+    font-size: 0.9em;
+
+    margin: 0 auto;
+
+    border: 2px solid var(--bgBorder);
+    border-radius: 8px;
+    background-color: var(--bgMain);
+
+    li {
+        margin-bottom: 12px;
+        list-style: none;
+    }
+}
+
+
+@media screen and (max-width:700px) {
+
+    .commentPage {
+        padding: 8px;
+    }
+
+    .commentForm {
+        text-align: center;
+
+        .nameInput {
+            width: 95%;
+            padding: 4px;
+        }
+
+        .commentInput {
+            resize: none;
+            height: 300px;
+            width: 95%;
+            padding: 4px;
+            max-width: none;
+            max-height: none;
+        }
+
+        &>* {
+            margin-top: 4px;
+        }
+
+        .commentFormSubmitButton {
+            padding: 8px;
+            width: 95%;
+        }
+    }
+
+    .commentsContainer {
+        width: 95%;
+        padding: 4px;
+        font-size: 1em;
+        text-align: center;
+        margin: 0 auto;
+
+        li {
+            margin-bottom: 8px;
+        }
+    }
+}
