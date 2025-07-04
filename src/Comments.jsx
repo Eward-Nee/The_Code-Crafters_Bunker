@@ -12,8 +12,10 @@ function generateRandomKey(length) {
 }
 
 function Comments() {
-    const apiUrlED = "https://catherine-andrews-median-frozen.trycloudflare.com/api/collections/comments/records"
-    const apiUrl = "https://catherine-andrews-median-frozen.trycloudflare.com/api/collections/posts/records"
+    // const apiUrlED = "https://catherine-andrews-median-frozen.trycloudflare.com/api/collections/comments/records"
+    // const apiUrl = "https://catherine-andrews-median-frozen.trycloudflare.com/api/collections/posts/records"
+    const apiUrlED = "https://mypocketbase.loca.lt/api/collections/comments/records"
+    const apiUrl = "https://mypocketbase.loca.lt/api/collections/posts/records"
     const [comments, setComments] = useState([])
     const [newComment, setNewComment] = useState("")
     const [nickName, setNickName] = useState("")
