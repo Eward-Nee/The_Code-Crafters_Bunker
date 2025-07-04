@@ -59,8 +59,8 @@ function Home() {
                     and passion with you, the viewer of this website.
                     <br />
                     <br />
-                    You see the navigation bar? <br />
-                    Do you notice the tabs? <br />
+                    Noticed the navigation bar? <br />
+                    Noticed the tabs? <br />
                     I am going to explain what you can expect on each tab:
                     <br /><br />
                     <b>The Home tab:</b> <br />
