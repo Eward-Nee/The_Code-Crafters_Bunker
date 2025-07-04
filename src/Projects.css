@@ -3,7 +3,7 @@
 #workProjects {
     text-align: center;
     padding: 8px;
-    border: 2px solid saddlebrown;
+    border: 2px solid var(--bgBorder);
     border-radius: 8px;
 }
 
@@ -15,7 +15,7 @@
 
 #projects {
     li {
-        border: 2px solid rgb(165, 122, 42);
+        border: 2px solid var(--bgBorder);
         border-radius: 20px;
         width: 20%;
         min-width: 100px;
@@ -28,10 +28,10 @@
         &:hover {
             transition: 0.2s;
             cursor: pointer;
-            background-color: rgb(219, 180, 107);
+            background-color: var(--bgHoverMain);
 
             & a {
-                color: rgb(0, 71, 119);
+                color: var(--textLight);
             }
         }
     }

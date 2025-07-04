@@ -18,7 +18,7 @@ section,
 article {
     text-align: center;
     padding: 8px;
-    border: 2px solid saddlebrown;
+    border: 2px solid var(--bgBorder);
     border-radius: 8px;
 
 
@@ -33,6 +33,7 @@ article {
         width: 100%;
         aspect-ratio: 1/1;
         max-width: 400px;
+        box-shadow: 0 0 5px var(--bgBorder), 0 0 10px var(--bgBorder);
     }
 }
 

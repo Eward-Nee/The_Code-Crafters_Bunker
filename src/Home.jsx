@@ -88,6 +88,7 @@ function Home() {
 
                 <a href={myImg} target="_blank"><img src={myImg} alt="a image of Eward." /></a>
 
+
             </article>
         </div>
     )
