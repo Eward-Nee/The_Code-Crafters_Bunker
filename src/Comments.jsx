@@ -32,7 +32,7 @@ function Comments() {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Bypass-Tunnel-Reminder": "any-value",
+                        "Bypass-Tunnel-Reminder": "yes",
                         "User-Agent": "CustomUserAgent/1.0"
                     }
                 })
@@ -64,7 +64,9 @@ function Comments() {
             const response = await fetch(apiUrlED, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Bypass-Tunnel-Reminder": "yes",
+                    "User-Agent": "CustomUserAgent/1.0"
                 },
                 body: JSON.stringify(requestBody)
             })
@@ -108,7 +110,11 @@ function Comments() {
 
         try {
             const response = await fetch(`${apiUrlED}/${idToDelete}`, {
-                method: "DELETE"
+                method: "DELETE",
+                headers: {
+                    "Bypass-Tunnel-Reminder": "yes",
+                    "User-Agent": "CustomUserAgent/1.0"
+                }
             })
 
             if (!response.ok) {
