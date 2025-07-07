@@ -14,8 +14,10 @@ function generateRandomKey(length) {
 function Comments() {
     // const apiUrlED = "https://.trycloudflare.com/api/collections/comments/records"
     // const apiUrl = "https://.trycloudflare.com/api/collections/posts/records"
-    const apiUrlED = "https://mypocketbase.loca.lt/api/collections/comments/records"
-    const apiUrl = "https://mypocketbase.loca.lt/api/collections/posts/records"
+    // const apiUrlED = "https://mypocketbase.loca.lt/api/collections/comments/records"
+    // const apiUrl = "https://mypocketbase.loca.lt/api/collections/posts/records"
+    const apiUrlED = "https://mytunnelinpocketbase.loca.lt/api/collections/comments/records"
+    const apiUrl = "https://mytunnelinpocketbase.loca.lt/api/collections/posts/records"
     const [comments, setComments] = useState([])
     const [newComment, setNewComment] = useState("")
     const [nickName, setNickName] = useState("")
@@ -26,7 +28,14 @@ function Comments() {
     useEffect(() => {
         async function fetchComments() {
             try {
-                const response = await fetch(apiUrl)
+                const response = await fetch(apiUrl, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Bypass-Tunnel-Reminder": "any-value",
+                        "User-Agent": "CustomUserAgent/1.0"
+                    }
+                })
                 if (!response.ok) {
                     throw new Error("Failed to fetch comments")
                 }
