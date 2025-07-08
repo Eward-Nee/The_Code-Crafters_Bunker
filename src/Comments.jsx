@@ -22,7 +22,7 @@ function Comments() {
     const [newComment, setNewComment] = useState("")
     const [nickName, setNickName] = useState("")
     const [error, setError] = useState(null)
-    const [newlyAddedComments, setNewlyAddedComments] = useState([]) // Track newly added comments
+    const [newlyAddedComments, setNewlyAddedComments] = useState([])
 
     // Fetch comments from the API
     useEffect(() => {
@@ -37,17 +37,22 @@ function Comments() {
                     }
                 })
                 if (!response.ok) {
-                    throw new Error("Failed to fetch comments")
+                    throw new Error("Failed to fetch comments, retrying...")
                 }
                 const data = await response.json()
-                setComments(data.items) // `deKey` will not be included in `data.items`
+                setComments(data.items)
             } catch (error) {
                 console.error("Error fetching comments:", error)
-                setError("Failed to fetch comments. Please try again later.")
+                setError("Failed to fetch comments, retrying...")
             }
         }
 
         fetchComments()
+        if (error) {
+            setTimeout(() => {
+                fetchComments()
+            }, 3000);
+        }
     }, [])
 
     // Add a new comment
