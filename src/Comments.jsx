@@ -16,8 +16,10 @@ function Comments() {
     // const apiUrl = "https://.trycloudflare.com/api/collections/posts/records"
     // const apiUrlED = "https://mypocketbase.loca.lt/api/collections/comments/records"
     // const apiUrl = "https://mypocketbase.loca.lt/api/collections/posts/records"
-    const apiUrlED = "https://mytunnelinpocketbase.loca.lt/api/collections/comments/records"
+    // const apiUrlED = "https://mytunnelinpocketbase.loca.lt/api/collections/comments/records"
     const apiUrl = "https://mytunnelinpocketbase.loca.lt/api/collections/posts/records"
+    const apiUrl2 = "https://tunnelmyinpocketbase.loca.lt/api/collections/posts/records"
+    const [useUrl, setUseUrl] = useState("")
     const [comments, setComments] = useState([])
     const [newComment, setNewComment] = useState("")
     const [nickName, setNickName] = useState("")
@@ -26,9 +28,9 @@ function Comments() {
 
     // Fetch comments from the API
     useEffect(() => {
-        async function fetchComments() {
+        async function fetchComments(api) {
             try {
-                const response = await fetch(apiUrl, {
+                const response = await fetch(api, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -38,21 +40,26 @@ function Comments() {
                 })
                 if (!response.ok) {
                     throw new Error("Failed to fetch comments, retrying...")
+                } else {
+                    if (api == apiUrl) {
+                        setUseUrl("https://mytunnelinpocketbase.loca.lt/api/collections/comments/records")
+                    } else {
+                        setUseUrl("https://tunnelmyinpocketbase.loca.lt/api/collections/comments/records")
+                    }
                 }
                 const data = await response.json()
                 setComments(data.items)
+                setError("")
             } catch (error) {
                 console.error("Error fetching comments:", error)
                 setError("Failed to fetch comments, retrying...")
+                setTimeout(() => {
+                    fetchComments(apiUrl2)
+                }, 3000);
             }
         }
 
-        fetchComments()
-        if (error) {
-            setTimeout(() => {
-                fetchComments()
-            }, 3000);
-        }
+        fetchComments(apiUrl)
     }, [])
 
     // Add a new comment
@@ -66,7 +73,7 @@ function Comments() {
 
             console.log("Request Body:", requestBody) // Log the request body
 
-            const response = await fetch(apiUrlED, {
+            const response = await fetch(useUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -114,7 +121,7 @@ function Comments() {
         }
 
         try {
-            const response = await fetch(`${apiUrlED}/${idToDelete}`, {
+            const response = await fetch(`${useUrl}/${idToDelete}`, {
                 method: "DELETE",
                 headers: {
                     "Bypass-Tunnel-Reminder": "yes",
