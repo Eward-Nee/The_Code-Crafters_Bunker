@@ -28,7 +28,7 @@ function Comments() {
 
     // Fetch comments from the API
     useEffect(() => {
-        async function fetchComments(api) {
+        async function fetchComments(api, secondRun) {
             try {
                 const response = await fetch(api, {
                     method: "GET",
@@ -52,10 +52,16 @@ function Comments() {
                 setError("")
             } catch (error) {
                 console.error("Error fetching comments:", error)
-                setError("Failed to fetch comments, retrying...")
-                setTimeout(() => {
-                    fetchComments(apiUrl2)
-                }, 3000);
+
+                if (!secondRun) {
+                    setError("Failed to fetch comments, retrying...")
+                    setTimeout(() => {
+                        fetchComments(apiUrl2, true)
+                    }, 1000);
+                } else {
+                    setError("Failed to fetch comments. Try again later")
+                }
+
             }
         }
 
@@ -146,10 +152,11 @@ function Comments() {
 
     return (
         <div className="commentPage">
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+
 
             <div className="commentsContainer">
                 <ul>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
                     {comments.map(comment => (
                         <li key={comment.id}>
                             <strong>{comment.nickName}: </strong>
