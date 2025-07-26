@@ -39,7 +39,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: 150ms;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -52,12 +51,20 @@ body {
     }
 }
 
+
+/* .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+} */
+
 .ml20 {
     padding-left: 20px;
 }
 
 .decLess {
     list-style: none;
+    cursor: pointer;
 }
 
 .inUP {
@@ -96,6 +103,15 @@ body {
     color: var(--textHoverLight);
 }
 
+#upArrow {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color: var(--bgLight);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 #gitLink {
     text-decoration: none;
     color: var(--textLight);
@@ -121,4 +137,10 @@ body {
             }
         }
     }
+
+
+
+    /* .header {
+        position: static;
+    } */
 }

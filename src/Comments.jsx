@@ -12,11 +12,6 @@ function generateRandomKey(length) {
 }
 
 function Comments() {
-    // const apiUrlED = "https://.trycloudflare.com/api/collections/comments/records"
-    // const apiUrl = "https://.trycloudflare.com/api/collections/posts/records"
-    // const apiUrlED = "https://mypocketbase.loca.lt/api/collections/comments/records"
-    // const apiUrl = "https://mypocketbase.loca.lt/api/collections/posts/records"
-    // const apiUrlED = "https://mytunnelinpocketbase.loca.lt/api/collections/comments/records"
     const apiUrl = "https://mytunnelinpocketbase.loca.lt/api/collections/posts/records"
     const apiUrl2 = "https://tunnelmyinpocketbase.loca.lt/api/collections/posts/records"
     const [useUrl, setUseUrl] = useState("")
@@ -51,8 +46,6 @@ function Comments() {
                 setComments(data.items)
                 setError("")
             } catch (error) {
-                console.error("Error fetching comments:", error)
-
                 if (!secondRun) {
                     setError("Failed to fetch comments, retrying...")
                     setTimeout(() => {
@@ -77,8 +70,6 @@ function Comments() {
             const generatedDeKey = generateRandomKey(30) // Generate a random deKey
             const requestBody = { comment: newComment, nickName, deKey: generatedDeKey }
 
-            console.log("Request Body:", requestBody) // Log the request body
-
             const response = await fetch(useUrl, {
                 method: "POST",
                 headers: {
@@ -90,7 +81,6 @@ function Comments() {
             })
 
             const responseData = await response.json() // Get the response data
-            console.log("Response Data:", responseData) // Log the response data
 
             if (!response.ok) {
                 throw new Error("Failed to add comment. Comments may only contain letters, numbers, commas, and full stops. Names may only contain letters.")
@@ -118,7 +108,6 @@ function Comments() {
     // Delete a comment by deKey
     async function handleDeleteComment(deKey) {
         const idToDelete = findIdByDeKey(deKey)
-        console.log(deKey)
 
         if (!idToDelete) {
             console.error("No comment found with the provided deKey:", deKey)

@@ -35,7 +35,7 @@ function Header() {
     }, [theme])
 
     return (
-        <>
+        <div className="header">
             <nav>
                 <ul className="decLess nav">
                     <li id="nav0" className={pageIndex == 0 ? "inUP navItem" : "clear navItem"}>Home</li>
@@ -47,7 +47,7 @@ function Header() {
             <div style={{ position: "absolute", cursor: "pointer", top: "0", right: "20px", fontSize: "2em" }} themechange="true">
                 {theme == "light" ? "☀️" : "🌘"}
             </div>
-        </>
+        </div>
     )
 }
 

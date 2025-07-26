@@ -44,7 +44,9 @@ function Projects() {
                     }
                 }
             } else {
-                event.target.children[0].click()
+                if (event.target.children[0]) {
+                    event.target.children[0].click()
+                }
             }
 
         })
