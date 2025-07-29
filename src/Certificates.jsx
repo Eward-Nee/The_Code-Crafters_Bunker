@@ -5,6 +5,9 @@ import HTMLimg from "/HTMLcert.png"
 import JSimg from "/JScert.png"
 import FELimg from "/FELcert.png"
 import DVimg from "/DVcert.png"
+import EXLimg from "/EXCELcert.png"
+import NSCimg from "/NSCcert.png"
+
 
 function Certificates() {
 
@@ -33,6 +36,16 @@ function Certificates() {
         source: DVimg,
         altText: "a Image of my Data Visualization certification",
         caption: "My data visualization certification"
+    }, {
+        link: "https://www.udemy.com/certificate/UC-101453f2-edee-4543-a55e-a0f302013c65",
+        source: EXLimg,
+        altText: "a Image of my Excel certification",
+        caption: "My Excel certification"
+    }, {
+        link: NSCimg,
+        source: NSCimg,
+        altText: "a Image of my National Senior Certificate",
+        caption: "My National Senior Certificate "
     }]
 
     const cardElements = arrObjCards.map((card, index) => (
