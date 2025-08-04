@@ -7,6 +7,7 @@ import FELimg from "/FELcert.png"
 import DVimg from "/DVcert.png"
 import EXLimg from "/EXCELcert.png"
 import NSCimg from "/NSCcert.png"
+import RWDimg from "/RWDcert.png"
 
 
 function Certificates() {
@@ -21,6 +22,11 @@ function Certificates() {
         source: CSSimg,
         altText: "a Image of my CSS certification",
         caption: "My CSS certification"
+    }, {
+        link: "https://www.freecodecamp.org/certification/fccdcac8782-0069-4258-9e7a-765911922d49/responsive-web-design",
+        source: RWDimg,
+        altText: "a Image of my Responsive Web Design Certificate",
+        caption: "My Responsive Web Design Certificate "
     }, {
         link: "https://www.freecodecamp.org/certification/fccdcac8782-0069-4258-9e7a-765911922d49/javascript-algorithms-and-data-structures-v8",
         source: JSimg,

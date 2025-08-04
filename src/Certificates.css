@@ -24,6 +24,7 @@ header {
 
 .cards a {
     width: 48%;
+    height: fit-content;
     margin: 10px;
     font-size: 2em;
     color: var(--textLight);
