@@ -8,6 +8,7 @@ import DVimg from "/DVcert.png"
 import EXLimg from "/EXCELcert.png"
 import NSCimg from "/NSCcert.png"
 import RWDimg from "/RWDcert.png"
+import RDimg from "/RDcert.png"
 
 
 function Certificates() {
@@ -47,6 +48,11 @@ function Certificates() {
         source: EXLimg,
         altText: "a Image of my Excel certification",
         caption: "My Excel certification"
+    }, {
+        link: "https://www.freecodecamp.org/certification/fccdcac8782-0069-4258-9e7a-765911922d49/relational-database-v8",
+        source: RDimg,
+        altText: "a Image of my National Senior Certificate",
+        caption: "My National Senior Certificate "
     }, {
         link: NSCimg,
         source: NSCimg,
