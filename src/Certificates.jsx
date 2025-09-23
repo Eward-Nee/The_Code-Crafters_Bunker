@@ -51,13 +51,13 @@ function Certificates() {
     }, {
         link: "https://www.freecodecamp.org/certification/fccdcac8782-0069-4258-9e7a-765911922d49/relational-database-v8",
         source: RDimg,
-        altText: "a Image of my National Senior Certificate",
-        caption: "My National Senior Certificate "
+        altText: "a Image of my Relational Database Certification",
+        caption: "My Relational Database Certification"
     }, {
         link: NSCimg,
         source: NSCimg,
         altText: "a Image of my National Senior Certificate",
-        caption: "My National Senior Certificate "
+        caption: "My National Senior Certificate"
     }]
 
     const cardElements = arrObjCards.map((card, index) => (
