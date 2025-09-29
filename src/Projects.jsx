@@ -8,6 +8,7 @@ import FEL from "./projectTypes/projectFrontEndLibs"
 import { useDispatch } from "react-redux"
 import { actionPage } from "./reducers"
 import DV from "./projectTypes/projectDataVisualization"
+import RD from "./projectTypes/projectRelationalDatabases"
 
 function Projects() {
     const [projectIndex, setProjectIndex] = useState(0)
@@ -28,6 +29,9 @@ function Projects() {
             dispatch(actionPage.switchPage(null))
         } else if (event.target.id == "DV") {
             setProjectIndex(5)
+            dispatch(actionPage.switchPage(null))
+        } else if (event.target.id == "RD") {
+            setProjectIndex(6)
             dispatch(actionPage.switchPage(null))
         } else {
             setProjectIndex(0)
@@ -104,6 +108,7 @@ function Projects() {
                         <li className="decLess"><a className="link" id="JS">JS</a></li>
                         <li className="decLess"><a className="link" id="FEL">Front end libraries</a></li>
                         <li className="decLess"><a className="link" id="DV">Data visualization</a></li>
+                        <li className="decLess"><a className="link" id="RD">Relational databases</a></li>
                     </ul>
                 </div>
 
@@ -146,10 +151,16 @@ function Projects() {
                     <FEL />
                 </>
             )
-        } else {
+        } else if (projectIndex == 5) {
             return (
                 <>
                     <DV />
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <RD />
                 </>
             )
         }
