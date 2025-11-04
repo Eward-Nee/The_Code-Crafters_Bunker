@@ -81,6 +81,10 @@ function Home() {
                     And that is it. I hope you have a good time viewing my website.
 
                 </p>
+                <br />
+                <p style={{color : "red"}}>
+                    Please note that this website is not under active development anymore. I am developing a new and improved portfolio website.
+                </p>
 
             </section>
 

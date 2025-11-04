@@ -146,6 +146,9 @@ function Comments() {
             <div className="commentsContainer">
                 <ul>
                     {error && <p style={{ color: 'red' }}>{error}</p>}
+                    <li>Please note that the comment section is down for good. I am working on a new and improved portfolio page, so development on this one has stoped. Thank for your understanding.</li>
+                    <br />
+                    <li>Greetings Eward</li>
                     {comments.map(comment => (
                         <li key={comment.id}>
                             <strong>{comment.nickName}: </strong>
