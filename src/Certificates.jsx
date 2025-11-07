@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 import "./Certificates.css"
 import CSSimg from "/CSScert.png"
 import HTMLimg from "/HTMLcert.png"
@@ -53,12 +53,8 @@ function Certificates() {
         source: RDimg,
         altText: "a Image of my Relational Database Certification",
         caption: "My Relational Database Certification"
-    }, {
-        link: NSCimg,
-        source: NSCimg,
-        altText: "a Image of my National Senior Certificate",
-        caption: "My National Senior Certificate"
-    }]
+    }
+]
 
     const cardElements = arrObjCards.map((card, index) => (
         <a key={index} href={card.link} target="_blank">
