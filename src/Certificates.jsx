@@ -6,7 +6,6 @@ import JSimg from "/JScert.png"
 import FELimg from "/FELcert.png"
 import DVimg from "/DVcert.png"
 import EXLimg from "/EXCELcert.png"
-import NSCimg from "/NSCcert.png"
 import RWDimg from "/RWDcert.png"
 import RDimg from "/RDcert.png"
 
